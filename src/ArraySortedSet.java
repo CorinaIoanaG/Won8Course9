@@ -93,6 +93,8 @@ public class ArraySortedSet {
                     array = new Integer[arraySort.length];
                     array = arraySort;
                     return;
+                } else if (array[i] == element) {
+                    return;
                 }
             }
             if (array[array.length - 1] < element) {
@@ -108,7 +110,10 @@ public class ArraySortedSet {
     }
 
     public Integer get(int element) {
-        return array[element];
+        if (element > 0 && element < array.length) {
+            return array[element];
+        }
+        return null;
     }
 
     // Removes an element from array at given index
